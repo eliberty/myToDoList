@@ -6,33 +6,27 @@ import TodoItem from '../components/TodoItem';
 const ListOfTodos = ({ todos = [], ...funcs }) => {
   useEffect(() => {
     funcs.fetchTodos();
-  }, [])
-
-  console.log(todos);
+  }, []);
 
   if (!todos.length) {
     return <>Pas de todos</>;
   }
 
-    return (
-     <div className="list">
-      {todos.map(todo =>
-        <TodoItem key={todo.id}
-                  todo={todo} />
-      )}
-      </div>
-    );
-
+  return (
+    <div className="list">
+      {todos.map((todo) => (
+        <TodoItem key={todo.id} todo={todo} />
+      ))}
+    </div>
+  );
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   todos: state.todosReducer.todos,
 });
 
 const mapDispatchToProps = {
-  fetchTodos: fetchTodos
+  fetchTodos: fetchTodos,
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps)(ListOfTodos);
+export default connect(mapStateToProps, mapDispatchToProps)(ListOfTodos);

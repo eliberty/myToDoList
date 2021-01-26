@@ -1,6 +1,6 @@
-import ListOfTodos from '../components/ListOfTodos';
-import AddTodoForm from './AddTodoForm';
-import '../styles/index.css';
+import ListOfTodos from './components/ListOfTodos';
+import AddTodoForm from './components/AddTodoForm.tsx';
+import './styles/index.css';
 import React from 'react';
 
 const App = () => {
