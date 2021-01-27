@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { createTodo } from '../redux/actions/todos';
+import { createPost } from '../redux/actions/posts';
 
-export interface Todo {
+export interface Post {
   title: string;
   body: string;
   userId: number;
 }
 
 interface Props {
-  newTodo: Todo;
-  createTodo: (createdTodo: Todo) => void;
+  newPost: Post;
+  createPost: (createdPost: Post) => void;
 }
 
-const AddTodoForm: React.FC<Props> = ({ createTodo, newTodo }) => {
+const AddPostForm: React.FC<Props> = ({ createPost, newPost }) => {
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
 
@@ -31,20 +31,20 @@ const AddTodoForm: React.FC<Props> = ({ createTodo, newTodo }) => {
         onChange={(e) => setBody(e.target.value)}
         placeholder="contenu du post"
       />
-      <button onClick={() => createTodo({ title, body, userId: 1 })}>
+      <button onClick={() => createPost({ title, body, userId: 1 })}>
         ajouter un post
       </button>
-      {newTodo && <p>Le post est bien enregistré !</p>}
+      {newPost && <p>Le post est bien enregistré !</p>}
     </div>
   );
 };
 
-const mapStateToProps = (state: { todosReducer: { createdTodo: Todo } }) => ({
-  newTodo: state.todosReducer.createdTodo,
+const mapStateToProps = (state: { postsReducer: { createdPost: Post } }) => ({
+  newPost: state.postsReducer.createdPost,
 });
 
 const mapDispatchToProps = {
-  createTodo: (createdTodo: Todo) => createTodo(createdTodo),
+  createPost: (createdPost: Post) => createPost(createdPost),
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(AddTodoForm);
+export default connect(mapStateToProps, mapDispatchToProps)(AddPostForm);
