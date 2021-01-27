@@ -16,10 +16,13 @@ const DetailedPostItem = ({
   }, []);
 
   if (!selectedPost) {
-    return <p>Pas de selectedPost</p>;
+    return <p>Nous n'avons pas trouvé ce post :'(</p>;
   }
+
+  // TODO separate post details & post comments in two components
   return (
-    <>
+    <section>
+      <h1>Post détaillé</h1>
       <div>
         <h2>{selectedPost.title}</h2>
         <p>{selectedPost.body}</p>
@@ -41,9 +44,9 @@ const DetailedPostItem = ({
           })}
         </div>
       ) : (
-        <p>pas de commentaires pour ce post</p>
+        <p>Il n'y a pas de commentaires pour ce post</p>
       )}
-    </>
+    </section>
   );
 };
 const mapStateToProps = (state) => ({

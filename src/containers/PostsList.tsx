@@ -1,15 +1,14 @@
 import React from 'react';
 import ListOfItems from '../components/ListOfItems';
-import AddPostForm from '../components/AddPostForm';
+import AddPostForm from '../components/AddPostForm/AddPostForm';
 
 const PostsList = () => {
   return (
-    <div>
-      <h1>Liste des posts</h1>
+    // TODO consider add condition on state.fetching : if true, display loader
+    <>
       <ListOfItems />
-      <h1>Ajouter un post</h1>
       <AddPostForm />
-    </div>
+    </>
   );
 };
 

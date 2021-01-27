@@ -3,10 +3,8 @@ import DetailedPostItem from '../components/DetailedPostItem';
 
 const PostDetailed = () => {
   return (
-    <div>
-      <h1>Post détaillé</h1>
-      <DetailedPostItem />
-    </div>
+    // TODO consider add condition on state.fetching : if true, display loader
+    <DetailedPostItem />
   );
 };
 

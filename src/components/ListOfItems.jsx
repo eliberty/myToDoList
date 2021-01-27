@@ -9,15 +9,18 @@ const ListOfItems = ({ posts = [], ...funcs }) => {
   }, []);
 
   if (!posts.length) {
-    return <>Pas de posts</>;
+    return <p>Pas de posts</p>;
   }
 
   return (
-    <div className="list">
-      {posts.map((post) => (
-        <PostItem key={post.id} post={post} />
-      ))}
-    </div>
+    <section>
+      <h1>Liste des posts</h1>
+      <div className="list">
+        {posts.map((post) => (
+          <PostItem key={post.id} post={post} />
+        ))}
+      </div>
+    </section>
   );
 };
 

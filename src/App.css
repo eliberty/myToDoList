@@ -7,6 +7,10 @@ body {
   overflow: scroll;
   overflow-x: hidden;
 }
+.list .item span:first-child {
+  width: 35%;
+  font-weight: bolder;
+}
 
 .item {
   display: flex;
@@ -27,9 +31,4 @@ body {
 }
 .comment > p {
   margin: 0;
-}
-
-.list .item span:first-child {
-  width: 35%;
-  font-weight: bolder;
 }
