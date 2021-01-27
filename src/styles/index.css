@@ -1,22 +1,35 @@
 body {
-    text-align: center;
+  text-align: center;
 }
 
 .list {
-    height: 400px;
-    overflow: scroll;
-    overflow-x: hidden;
+  height: 400px;
+  overflow: scroll;
+  overflow-x: hidden;
 }
 
 .item {
-    display: flex;
-    background-color: lightgrey;
-    border-radius: 5px;
-    margin: 20px 5px;
-    padding: 10px;
+  display: flex;
+  background-color: lightgrey;
+  border-radius: 5px;
+  margin: 20px 5px;
+  padding: 10px;
+}
+
+.comment {
+  flex-direction: column;
+}
+.comment > h3 {
+  margin: 0 0 1em 0;
+}
+.comment > h4 {
+  margin: 0 0 0.5em 0;
+}
+.comment > p {
+  margin: 0;
 }
 
 .list .item span:first-child {
-    width: 35%;
-    font-weight: bolder;
+  width: 35%;
+  font-weight: bolder;
 }

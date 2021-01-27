@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { fetchTodos } from '../redux/actions/todos';
-import TodoItem from '../components/TodoItem';
+import TodoItem from './TodoItem/TodoItem';
 
 const ListOfTodos = ({ todos = [], ...funcs }) => {
   useEffect(() => {
@@ -26,7 +26,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = {
-  fetchTodos: fetchTodos,
+  fetchTodos: (id) => fetchTodos(id),
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ListOfTodos);
