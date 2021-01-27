@@ -1,6 +1,6 @@
 import React from 'react';
 import ListOfItems from '../components/ListOfItems';
-import AddPostForm from '../components/AddPostForm/AddPostForm';
+import AddPostForm from '../components/AddPostForm';
 
 const PostsList = () => {
   return (

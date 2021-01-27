@@ -1,5 +1,5 @@
 import axios from 'axios';
-import type { Post } from '../../components/AddPostForm/AddPostForm';
+import type { Post } from '../../components/AddPostForm';
 
 // get all posts
 export const fetchPosts = () => (dispatch) => {

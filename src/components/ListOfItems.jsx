@@ -1,26 +1,32 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { fetchPosts } from '../redux/actions/posts';
-import PostItem from './PostItem/PostItem';
+import PostItem from './PostItem';
+import { Grid, Typography, Container } from '@material-ui/core';
 
 const ListOfItems = ({ posts = [], ...funcs }) => {
   useEffect(() => {
     funcs.fetchPosts();
   }, []);
 
+  // TODO implement loader while fetching
   if (!posts.length) {
     return <p>Pas de posts</p>;
   }
 
   return (
-    <section>
-      <h1>Liste des posts</h1>
-      <div className="list">
+    <Container maxWidth="md">
+      <Typography variant="h2" component="h1" color="primary">
+        Liste des posts
+      </Typography>
+      <Grid container spacing={3} className="list">
         {posts.map((post) => (
-          <PostItem key={post.id} post={post} />
+          <Grid item xs={6} key={post.id}>
+            <PostItem post={post} />
+          </Grid>
         ))}
-      </div>
-    </section>
+      </Grid>
+    </Container>
   );
 };
 
