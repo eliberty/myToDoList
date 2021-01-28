@@ -1,0 +1,37 @@
+body {
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 0.3em !important;
+  padding: 0.05em 0 !important;
+}
+
+.list {
+  height: 400px;
+  overflow: scroll;
+  overflow-x: hidden;
+  margin-bottom: 1.5em !important;
+  padding: 0.5em;
+}
+
+.item {
+  display: flex;
+  background-color: lightgrey;
+  border-radius: 5px;
+  margin: 20px 5px;
+  padding: 10px;
+}
+
+.comment {
+  flex-direction: column;
+}
+.comment > h3 {
+  margin: 0 0 1em 0;
+}
+.comment > h4 {
+  margin: 0 0 0.5em 0;
+}
+.comment > p {
+  margin: 0;
+}
